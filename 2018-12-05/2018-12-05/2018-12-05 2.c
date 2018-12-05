@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+int dub(int* x)
+{
+	*x = *x * 2;
+}
+
 int main()
 {
 	int *y; //*y is a pointer variable, = variable that contains an adress in memory
@@ -9,33 +14,29 @@ int main()
 	*p = 6; //Changing the value of where pointer p is pointing
 	printf("%d", i);
 
-	double x;
-	double *d = NULL;
+	//double x;
+	//double *d = NULL;
 
-	y = x + 2;
-	y = *d + 2; // with * it becomes a "normal" variable to where it points
-	// *d = content of d
+	//y = x + 2;
+	//y = *d + 2; // with * it becomes a "normal" variable to where it points
+	//// *d = content of d
 
 
 	// *d = 56; is not possible
 	//malloc(number_of_bytes);
 	//malloc(5); //It passes this to the memory management system and tries to find 5 free byte next to eachother.
 			   //will return the adress of the first byte
-
+	int *d = NULL;
 	d = malloc(sizeof(double));
 	if (d == NULL)
 	{
 		puts("Memory couldnt be allocated");
 		exit(1);
 	}
-	*d = 56
-	
+	*d = 56;
 
-
-	double ch;
-	printf("%p", &ch);
-	printf("\n\n");
-	system("pause");
-	return 0;
+	int i = 10;
+	dub(*i);
+	printf("i = %d\n", *i);
 
 }
